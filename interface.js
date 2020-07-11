@@ -3,10 +3,15 @@ function writeTextUI() {
   fill(0);
   noStroke
   colH1 = color(355, 0, 20);
-  nextButton = createButton("Save")
+  nextButton = createButton("New")
   nextButton.class("select");
   nextButton.position(width - (16 * vMax), height - (7 * vMax));
   nextButton.mousePressed(nextDrawing);
+
+  saveButton = createButton("Save")
+  saveButton.class("select");
+  saveButton.position(width - (16 * vMax), height - (13 * vMax));
+  saveButton.mousePressed(saveImg);
 }
 
 function writeRestartUI() {
@@ -189,4 +194,9 @@ function makeintroDots() {
   }
   randomIntroColour();
   introLayer.ellipse(xintro[0], yintro[0], 50, 50);
+}
+
+function saveImg() {
+  click.play();
+  save('touchscape' + month() + day() + hour() + second() + '.jpg');
 }
