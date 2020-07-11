@@ -19,7 +19,7 @@ function writeRestartUI() {
   fill(0);
   noStroke();
   nextButton.remove();
-  nextButton = createButton("New")
+  nextButton = createButton("Restart")
   nextButton.class("select");
   nextButton.position(width - (16 * vMax), height - (7 * vMax));
   nextButton.style('background-color', 'indianred');
