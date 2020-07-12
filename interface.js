@@ -12,6 +12,12 @@ function writeTextUI() {
   saveButton.class("select");
   saveButton.position(width - (16 * vMax), height - (13 * vMax));
   saveButton.mousePressed(saveImg);
+
+
+    fsButton = createImg('assets/enterFS.png');
+    fsButton.style('height', '4.5vMax');
+    fsButton.position(width - (7.5 * vMax), 1.5 * vMax);
+    fsButton.mousePressed(fs);
 }
 
 function writeRestartUI() {
@@ -199,4 +205,14 @@ function makeintroDots() {
 function saveImg() {
   click.play();
   save('touchscape' + month() + day() + hour() + second() + '.jpg');
+}
+
+function fs() {
+  if (!fsBool) {
+    fullscreen(1);
+    fsBool = 1;
+  } else {
+    fullscreen(0);
+    fsBool = 0;
+  }
 }
